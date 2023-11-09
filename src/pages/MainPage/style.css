@@ -1,0 +1,79 @@
+#main .nav {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #d5d5d5;
+  padding: 0.5rem;
+}
+
+#main .nav .logo {
+  flex: 1;
+  font-size: 1rem;
+  margin: 0;
+}
+
+#main .nav > button {
+  background: #200397;
+  color: rgb(238, 242, 243);
+  width: 4rem;
+  height: 2rem;
+  padding: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#main .nav > button:hover {
+  background: #634e4e;
+}
+
+#main .search , #main .new{
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 0.5rem;
+  gap: 5px;
+}
+
+#main label {
+  flex-shrink: 0;
+}
+
+#main input {
+  width: 100%;
+}
+
+#main .repositories {
+  max-width: 480px;
+  margin: 1rem auto;
+}
+
+#main .repositories .title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#main .repositories .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main .repositories .item {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #d5d5d5;
+  padding: 0.5rem;
+}
+#main .repositories .item:last-child{
+    border-bottom: none;
+}
+
+
+#main .repositories .item .info {
+  flex: 1;
+}
+#main .repositories .item .name {
+  font-size: 1.5rem;
+}
