@@ -6,14 +6,14 @@ export const AuthContext = React.createContext();
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [user, setuser] = React.useState(null);
+  const [user, setUser] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     const user = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     if (user && token) {
-      setuser(JSON.parse(user));
+      setUser(JSON.parse(user));
       api.defaults.headers.Authorization = `Bearer ${token}`;
     }
     setLoading(false);
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
     api.defaults.headers.Authorization = `Bearer ${response.data.token}`;
 
-    setuser(response.data.user);
+    setUser(response.data.user);
 
     navigate("/");
   };
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     api.defaults.headers.Authorization = null;
-    setuser(null);
+    setUser(null);
     navigate("/login");
   };
   return (
